@@ -1,0 +1,2 @@
+
+trtexec --onnx=D:\models\models\yolov9-base_onnx\1\model.onnx --saveEngine=my_model.plan -

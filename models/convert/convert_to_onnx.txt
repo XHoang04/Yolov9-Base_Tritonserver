@@ -1,0 +1,1 @@
+python convert_to_onnx.py --ckpt "C:\Users\hoang\Downloads\yolov9-base\yolov9-base\weights\last.pt" --onnx "C:\Users\hoang\Downloads\yolov9-base\yolov9-base\weights\last.onnx"

@@ -1,0 +1,21 @@
+services:
+  tritonserver:
+    image: hieupth/tritonserver:24.08
+    container_name: tritonserver
+    environment:
+      MODEL_REPO: /models  
+    volumes:
+      - "/d/models/models:/models"
+    tty: true
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v2/health/ready"]
+      interval: 30s
+      timeout: 5s
+      retries: 2
+    runtime: nvidia
+    command: >
+      bash -c "tritonserver --model-repository=/models"
